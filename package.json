@@ -1,0 +1,63 @@
+{
+  "name": "soma-inspector",
+  "displayName": "Soma Inspector",
+  "version": "0.1.0",
+  "publisher": "soma",
+  "description": "Unity-like inspector for Pygame projects",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "soma-inspector.openPanel",
+        "title": "Soma: Open Inspector Panel"
+      },
+      {
+        "command": "soma-inspector.jumpToUpdate",
+        "title": "Soma: Jump to Update Method"
+      },
+      {
+        "command": "soma-inspector.renameProperty",
+        "title": "Soma: Rename Property"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "soma-inspector",
+          "title": "Soma Inspector",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "soma-inspector": [
+        {
+          "id": "somaInspectorView",
+          "name": "Inspector",
+          "type": "webview"
+        },
+        {
+          "id": "somaAssetsView",
+          "name": "Assets",
+          "type": "webview" 
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "soma-inspector.openPanel",
+        "key": "ctrl+alt+i",
+        "when": "editorLangId == python || editorLangId == json || editorLangId == glsl"
+      }
+    ]
+  }
+}
