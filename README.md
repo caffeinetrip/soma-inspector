@@ -16,3 +16,4 @@
 ## Installation
 
 Clone that git repository in your VSCode Extensions.
+For load data from project press Ctrl + Alt + I
